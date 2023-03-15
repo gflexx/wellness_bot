@@ -1,0 +1,176 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: medical_assistance
+  examples: |
+    - I am not feeling well
+    - I need medical help
+    - Can you help me
+    - i am not feeling well
+    - Medical assistance
+    - MD
+
+- intent: get_product
+  examples: |
+    - i want a product
+    - i need some medicine
+    - Product
+    - Medicine
+    - Prod
+
+- intent: get_blog
+  examples: |
+    - i want a blog
+    - i want to read a blog
+    - read blog
+    - blog
+    - read
+
+- intent: get_pharmacy
+  examples: |
+    - i want a pharmacy
+    - pharmacy
+    - clinic
+
+- intent: get_doctor
+  examples: |
+    - Doctors
+    - get me a doctor
+    - doc
+    - nurse
+    - i need a doctor
+
+- intent: get_gender
+  examples: |
+    - I am a [male](gender)
+    - I'm a [female](gender)
+    - [male](gender)
+    - (female)(gender)
+
+- intent: get_age
+  examples: |
+    - I am [47]{"entity": "age"} years old
+    - [18](age) years old
+    - [9](age) months old
+    - [33] years
+    - [3] years old
+
+- intent: get_age_group
+  examples: |
+    - I am an [adult]{"entity": "age_group"}
+    - [child](age_group)
+    - A [child](age_group)
+    - An [adult]{"entity": "age_group"}
+
+- intent: get_problem
+  examples: |
+    - [anxiety](illness)
+    - [knee problems]{"entity": "illness"}
+    - [coughing]{"entity": "illness"}
+    - I'm not feeling well at my [knee]{"entity": "illness"}
+    - i'm having [vaginal discharges](illness)
+    - [sore throat](illness)
+    - i am suffering from [lower back pain](illness)
+    - i have [fever](illness)
+    - too much [cholesterol](illness)
+    - i am suffering from [cholesterol](illness)
+    - [coughing](illness)
+    - i have [knee problems](illness)
+    - painfull [bladder infection](illness)
+    - i'm positive with [corona](illness)
+    - i have [corona](illness)
+    - [tiredness](illness)
+    - i have [low moods](illness)
+    - i am suffering from [cervical cancer](illness)
+    - i have [low moods](illness)
+    - i am [coughing](illness)
+    - [coughing](illness)
+    - [fever](illness)
+    - [anxiety](illness)
+    - [bladder infection](illness)
+    - [cervical cancer](illness)
+    - [chest pains](illness)
+    - [cholesterol](illness)
+    - [corona](illness)
+    - [coughing](illness)
+    - [knee problems](illness)
+    - [low mood](illness)
+    - [lower back pain](illness)
+    - [sore throat](illness)
+    - [stress](illness)
+    - [tiredness](illness)
+    - [vaginal discharge](illness)
+
+- lookup: illness
+  examples: |
+    - anxiety
+    - bladder infection
+    - cervical cancer
+    - chest pains
+    - cholesterol
+    - corona
+    - coughing
+    - fever
+    - knee problems
+    - low mood
+    - lower back pain
+    - sore throat
+    - stress
+    - tiredness
+    - vaginal discharge
+    - pain

@@ -1,0 +1,23 @@
+version: "3.1"
+
+stories:
+
+- story: get doctors
+  steps:
+  - intent: get_doctor
+  - action: utter_ask_doctor_type
+
+- story: get products
+  steps:
+  - intent: get_product
+  - action: utter_ask_product_name
+
+- story: get blogs
+  steps:
+  - intent: get_blog
+  - action: utter_ask_blog_name
+
+- story: get pharmacy
+  steps:
+  - intent: get_pharmacy
+  - action: utter_ask_pharmacy_name

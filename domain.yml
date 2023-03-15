@@ -1,0 +1,197 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - bot_challenge
+  - medical_assistance
+  - get_product
+  - get_blog
+  - get_doctor
+  - get_pharmacy
+  - get_gender
+  - get_age
+  - get_age_group
+  - get_problem
+
+
+entities:
+  - gender
+  - age
+  - illness
+  - solution
+  - doctor
+  - product
+  - age_group
+  - blog
+  - pharmacy
+
+
+slots:
+  gender:
+    type: categorical
+    influence_conversation: true
+    values:
+      - male
+      - female
+    mappings:
+    - type: from_entity
+      entity: gender
+
+  age:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: age
+
+  age_group:
+    type: categorical
+    influence_conversation: true
+    values:
+      - child
+      - adult
+    mappings:
+    - type: from_entity
+      entity: age_group
+
+  illness:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: illness
+
+  solution:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: solution
+
+  doctor:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: doctor
+
+  product:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product
+
+  blog:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: blog
+
+  pharmacy:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: pharmacy
+
+  symptoms:
+    type: list
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: illness
+
+forms:
+  diagnosis_form:
+    required_slots:
+      - gender
+      - age_group
+      - age
+      
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Hello! How are you doing?"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Goodbye"
+
+  utter_iamabot:
+  - text: "I am The Wellness and Prevention Bot."
+
+  utter_ask_gender:
+  - text: "What is your gender?"
+  - text: "Are you male or female?"
+
+  utter_ask_age_group:
+  - text: "Are you a child or adult?"
+  
+  utter_ask_age:
+  - text: "What is your age?"
+  - text: "How old are you?"
+
+  utter_dignosis_report:
+  - text: "You are {gender} {age_group} of age: {age}"
+
+  utter_submit_data:
+  - text: "Submiting your data for processing"
+
+  utter_ask_symptoms:
+  - text: "How or where are you feeling bad?"
+  - text: "How have you been feeling unwell?"
+
+  utter_ask_stop_diagnosis:
+  - text: "Are you sure that you want to stop this process?"
+
+  utter_didnt_get:
+  - text: "Sorry we didn't get that, kindly rephrase."
+
+  utter_canthelp:
+  - text: "Sorry, i did not get that, please repeat"
+  - text: "Sorry, i cant help you, please be clear"
+
+  utter_ask_product_name:
+  - text: "What is the name of the product you want?"
+
+  utter_ask_doctor_type:
+  - text: "Which type of doctor do you want?"
+
+  utter_ask_blog_name:
+  - text: "What category of blog would you like?"
+
+  utter_ask_pharmacy_name:
+  - text: "What is the pharmacy name?"
+
+
+actions:
+  - utter_greet
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_dignosis_report
+  - utter_submit_data
+  - action_hello_world
+  - action_get_doctor
+  - action_get_blog
+  - action_get_product
+  - action_get_pharmacy
+  - validate_diagnosis_form
+  - action_check_disease
+
+
+session_config:
+  session_expiration_time: 600
+  carry_over_slots_to_new_session: true
